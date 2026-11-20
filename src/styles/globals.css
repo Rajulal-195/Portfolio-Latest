@@ -1,0 +1,29 @@
+@tailwind base;@tailwind components;@tailwind utilities;
+:root{--font-display:'Fraunces',Georgia,serif;--font-body:'Plus Jakarta Sans',system-ui,sans-serif;--bg:243 247 255;--bg2:228 237 255;--card:255 255 255;--ink:15 27 61;--muted:82 96 127;--brand:37 99 235;--brand2:29 78 216;--glass:rgba(255,255,255,.62);--glassb:rgba(255,255,255,.9)}
+.dark{--bg:8 13 30;--bg2:14 22 48;--card:20 30 58;--ink:232 238 255;--muted:154 168 199;--brand:96 165 250;--brand2:147 197 253;--glass:rgba(24,36,72,.55);--glassb:rgba(120,160,255,.18)}
+html{scroll-behavior:smooth}
+body{background:rgb(var(--bg));color:rgb(var(--ink));font-family:var(--font-body),sans-serif;overflow-x:hidden;transition:background .4s}
+::selection{background:rgb(var(--brand)/.25)}
+:focus-visible{outline:2px solid rgb(var(--brand));outline-offset:3px}
+@layer components{
+.glass{background:var(--glass);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid var(--glassb);box-shadow:0 12px 40px -14px rgb(var(--brand)/.35)}
+.border-cu{border:1px solid rgb(var(--brand)/.2)}
+.copper-text,.grad-text{background:linear-gradient(110deg,rgb(var(--brand2)),#60A5FA,rgb(var(--brand2)));background-size:220% auto;-webkit-background-clip:text;background-clip:text;color:transparent;animation:shine 7s linear infinite;padding-bottom:.16em;margin-bottom:-.16em}
+.btn{@apply relative inline-flex items-center justify-center gap-2 overflow-hidden rounded-full px-6 py-3 text-sm font-semibold transition-all duration-300 hover:-translate-y-0.5 active:scale-95}
+.btn-solid{background:linear-gradient(135deg,#1e40af,#2563eb 60%,#3b82f6);color:#fff;box-shadow:0 10px 26px -8px rgb(37 99 235/.7)}
+.btn-solid::after{content:"";position:absolute;inset:0;background:linear-gradient(100deg,transparent 30%,rgba(255,255,255,.45) 50%,transparent 70%);transform:translateX(-120%);transition:transform .7s}
+.btn-solid:hover::after{transform:translateX(120%)}
+.btn-ghost{@apply glass text-copper2 hover:border-copper}
+.chip{@apply glass inline-flex items-center gap-2 rounded-full px-3 py-1.5 text-xs font-medium}
+}
+@keyframes shine{to{background-position:220% center}}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-18px)}}
+@keyframes drift{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(60px,40px) scale(1.15)}}
+@keyframes spin{to{transform:rotate(360deg)}}
+@keyframes r1{from{transform:rotateX(68deg) rotateZ(0)}to{transform:rotateX(68deg) rotateZ(360deg)}}
+@keyframes r2{from{transform:rotateY(68deg) rotateZ(0)}to{transform:rotateY(68deg) rotateZ(-360deg)}}
+@keyframes marquee{to{transform:translateX(-50%)}}
+@keyframes blink{50%{opacity:0}}
+.float{animation:float 6s ease-in-out infinite}.float2{animation:float 8s ease-in-out -2s infinite}
+.marquee{animation:marquee 30s linear infinite}.marquee:hover{animation-play-state:paused}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}

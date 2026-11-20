@@ -1,0 +1,2 @@
+export const profile={name:"Raju Lal",email:"rajulal0747@gmail.com",phone:"+91 6378635478",github:"https://github.com/Rajulal-195",linkedin:"https://linkedin.com/in/rajulal-a3812018b",location:"Jaipur, India",resume:"/Raju-Lal-Resume.pdf"};
+export const techIcons:[string,string,boolean?][]=[["React","react"],["Next.js","nextdotjs",true],["Node.js","nodedotjs"],["Express","express",true],["MongoDB","mongodb"],["TypeScript","typescript"],["Tailwind CSS","tailwindcss"],["PostgreSQL","postgresql"],["Docker","docker"],["Git","git"],["Firebase","firebase"],["Grafana","grafana"]];

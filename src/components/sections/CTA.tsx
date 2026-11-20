@@ -1,0 +1,5 @@
+import Reveal from "../ui/Reveal";
+export default function CTA(){return(<section className="px-6 py-12"><Reveal><div className="relative mx-auto flex max-w-6xl flex-col items-start justify-between gap-6 overflow-hidden rounded-3xl bg-gradient-to-r from-blue-800 via-blue-600 to-sky-500 p-10 text-white md:flex-row md:items-center">
+ <span className="float absolute -right-6 -top-6 h-28 w-28 rounded-full bg-white/20 blur-sm"/><span className="float2 absolute bottom-4 right-1/3 h-8 w-8 rounded-full bg-white/30"/><span className="absolute -bottom-16 right-10 h-48 w-48 rotate-45 rounded-3xl border border-white/30 bg-white/10" style={{animation:"spin 30s linear infinite"}}/>
+ <div className="relative"><h2 className="font-display text-3xl font-semibold md:text-4xl">Have a Project in Mind?</h2><p className="mt-2 text-blue-100">Let’s turn your ideas into powerful digital solutions.</p></div>
+ <a href="#contact" className="btn relative bg-white !text-blue-700 shadow-xl">Get In Touch →</a></div></Reveal></section>);}
